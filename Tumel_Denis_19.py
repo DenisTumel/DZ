@@ -6,10 +6,9 @@ class Company:
     levels = {1: 'junior', 2: 'middle', 3: 'senior', 4: 'lead'}
 # Создайте метод __init__(), внутри которого будут определены два protected свойства:
 # 1) _index - передается параметром и 2) _level - принимает из словаря levels значение с ключом _index
-    def __init__ (self, index,levels=None):
+    def __init__ (self, index):
         self._index = index
         self._level= self.levels[index]
-
 # Создайте метод _level_up(), который будет переводить программиста на следующий уровень
     def _level_up(self):
         self._index+=1
@@ -22,7 +21,7 @@ class Company:
 class Programmer(Company):
 # Создайте метод __init__(), внутри которого будут определены 3 динамических свойства:
     def __init__(self,name,age,level):
-        super().__init__(level,{1: 'junior', 2: 'middle', 3: 'senior', 4: 'lead'})
+        super().__init__(level)
 # 1) name - передается параметром, является публичным,
         self.name=name
 # 2)age - возраст
