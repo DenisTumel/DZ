@@ -84,7 +84,7 @@ while not game_over:
         pygame.draw.rect(dis, bleck, [obstacle_x, obstacle_y, 30, 30])#создал препятствие
         pygame.display.update()
 
-    if x_1 == obstacle_x and y_1 == obstacle_y:
+    if x_1 in range(obstacle_x,obstacle_x+30,10) and y_1 in range(obstacle_y,obstacle_y+30,10):
         game_over=True
         game_over_sound.play()#
     if len_s[-1] in len_s[0:-2]:
@@ -103,6 +103,7 @@ while not game_over:
 
         apple_x = random.randrange(0, wind_size[0], 10)
         apple_y = random.randrange(0, wind_size[1], 10)
+
 
     clock.tick(sped)
 
